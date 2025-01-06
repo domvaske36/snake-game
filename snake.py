@@ -61,3 +61,9 @@ class Snake:
     #return position of snake head as a tuple
     def get_Position(self) -> tuple:
         return self.body[0]
+    
+    def self_collision(self) -> bool:
+        for position in self.body[1:]:
+            if position == self.get_Position():
+                return True
+        return False
